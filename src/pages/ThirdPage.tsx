@@ -1,27 +1,47 @@
+import { ALL } from "dns";
 import React from "react";
 import { useState } from "react";
 import { ChangeEventHandler } from "react";
 
-
 export default function ThirdPage() {
-    const [ArrayEl, setArrayEl] = useState('0')
-    const [Array, setArray] = useState([])
-    const [A, setA] = useState('0')
-    let EnterCount = 0;
-    for (let i = 0; i < Array.length; i++) {
-        const ArrayEl = Array[i];
-        Array.length = 10;
+    const [a, setA] = useState('')
+    const [testArray, setTestArray] = useState([''])
+    const [arrayEl, setArrayEl] = useState('');
+    const [countNum, setCountNum] = useState(0);
+
+    function addEl() {
+        testArray.splice(1, 0, arrayEl)
+        console.log(testArray)
     }
-
-
+    function countA() {
+        const count = testArray.filter(e => e === a).length
+        setCountNum(count);
+        console.log(countNum)
+    }
     return (
-            <div style={{ display: "flexbox"}}>
-                заполните массив:<input type="number" value={ArrayEl} onChange={e => setArrayEl(e.target.value)} style={{ border: "solid 5px red" }}></input>
-                <button>добавить элемент в массив</button>
-                введите a:<input value={A} type="number" style={{ border: "solid 5px red" }}></input>
-                <text>количество заходов:{0}</text>
-                <ul>
-                </ul>
-            </div>
+
+        <div style={{display:"flex", flexDirection:"column", width:"300px"}}>
+            <span>
+                введите элемент который надо добавить в массив
+                <input type="number" style={{ border: "1px black solid" }} value={arrayEl} onChange={(e) => setArrayEl(e.target.value)} />
+                <button style={{ border: "1px black solid" }} onClick={addEl}>добавить</button>
+            </span>
+            <span>
+                введите а
+                <input type="number" style={{ border: "1px black solid" }} value={a} onChange={(e) => setA(e.target.value)} />
+            </span>
+
+
+            <button style={{ border: "1px black solid" }} onClick={countA}>посчитать</button>
+            <ul>
+                list
+                <li>
+                    {testArray}
+                </li>
+            </ul>
+            <span>количество заходов:{countNum}</span>
+        </div>
+
+
     )
 }
