@@ -7,12 +7,6 @@ const XYPage = () => {
     const [y1, setY1] = React.useState(0)
     const [x2, setX2] = React.useState(0)
     const [y2, setY2] = React.useState(0)
-
-    let [dots, setDots] = React.useState([
-        { id: 0, x: x1, y: x1 },
-        { id: 1, x: x2, y: x2 },
-    ])
-
     function changeX1(event: any) {
         setX1(event.target.value)
     }
