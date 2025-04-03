@@ -1,4 +1,7 @@
+import { wrap } from "module"
 import React from "react"
+import XYPHelp from "../components/xyp"     
+
 
 const XYPage = () => {
 
@@ -7,6 +10,7 @@ const XYPage = () => {
     const [y1, setY1] = React.useState(0)
     const [x2, setX2] = React.useState(0)
     const [y2, setY2] = React.useState(0)
+
     function changeX1(event: any) {
         setX1(event.target.value)
     }
@@ -20,7 +24,7 @@ const XYPage = () => {
         setY2(event.target.value)
     }
 
-    
+
     function checkZone() {
         if (x1 < 0 && y1 > 0 && x2 < 0 && y2 > 0) {
             console.log("zone 1")
@@ -36,19 +40,22 @@ const XYPage = () => {
         }
         else {
             console.log("не входит в ни одну из зон")
-        }   
+        }
     }
-    
+
 
     return (
-        <div style={{ width: "200px", display: "flex", flexDirection: "column" }}>
+        <div style={{ width: "600px", display: "flex", flexDirection: "column" }}>
             <span>
-                X1: <input value={x1} onInput={(e) => changeX1(e)} />
-                Y1: <input value={y1} onInput={(e) => ChangeY1(e)} />
+                Первая точка     
+                X: <input value={x1} onInput={(e) => changeX1(e)} />
+                    Y: <input value={y1} onInput={(e) => ChangeY1(e)} />
             </span>
+            <figure style={{ width:"900px", border:"1px solid black"}} ></figure>
             <span>
-                X2: <input value={x2} onInput={(e) => changeX2(e)} />
-                Y2: <input value={y2} onInput={(e) => ChangeY2(e)} />
+                Вторая точка
+                X: <input value={x2} onInput={(e) => changeX2(e)} />
+                Y: <input value={y2} onInput={(e) => ChangeY2(e)} />
             </span>
 
             <div>
@@ -61,7 +68,9 @@ const XYPage = () => {
                 <span> Y2:{y2} </span>
             </div>
 
-            <button style={{ border: "1px" }} onClick={checkZone}>TEST</button>
+            <button style={{ border: "red solid 1px" }} onClick={checkZone}>TEST</button>
+            <div style={{display:"flex", flexWrap:"wrap", width:"300px"}}>
+            </div>
         </div>
     )
 }
