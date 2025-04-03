@@ -1,8 +1,5 @@
 import { wrap } from "module"
 import React from "react"
-import XYPHelp from "../components/xyp"     
-
-
 const XYPage = () => {
 
 

@@ -1,54 +1,54 @@
-import { kMaxLength } from "buffer";
 import React from "react";
-import { arrayBuffer } from "stream/consumers";
+import { Button } from "@mui/material";
+
+
 
 
 const UgadalkaPage = () => {
-    const [inputNumber, setInputNumber] = React.useState(0)
-    const [arr, setArr] = React.useState([0])
-
-    for (let i = 0; i < 100; i++) {
-        arr[i] = i + 1
-    }
-
-    function changeArr(event: any) {
-        setArr(event.target.value)
-    }
-
-    function smaller() {
-        Math.round(arr.length /= 2)
-       
-        console.log(arr)
-    }
-    function bigger() {
-        for(let i = 50; i < 100; i++){
-            arr[i] = i + 1
-
+    const [answer, setAnswer] = React.useState([50])
+    const [start, setStart] = React.useState([1])
+    const [end, setEnd] = React.useState([100])
+    const [predict, setPredict] = React.useState("ваше число `${}`")
+    const [arr, setArr] = React.useState([])
+    function generateArray()
+    {
+        for (let i = 1; i > 101; i++) {
+            let arr = []
+            arr.push(i)
+            console.log(arr)
         }
-
-        console.log(arr)
     }
-    function endgame() {
 
+
+
+
+
+
+    function selectButton(key: number) {
+        switch (key) {
+            case 1:
+
+                console.log("2")
+                break;
+            case -1:
+                console.log("1")
+                break;
+            default:
+                console.log("3")
+                break;
+        }
     }
-    return (<div>
 
-        <span onChange={(e) => changeArr(e)}> ваше число {Math.max.apply(null, arr)} ?
-        </span>
-        <div style={{display:"flex", width:"100px",}}>
-            <button style={{border:"5px black solid" }} onClick={endgame}>
-                да
-            </button>
-            <button style={{border:"5px black solid" }} onClick={bigger} >
-                нет оно БОЛЬШЕ
-            </button>
-            <button style={{border:"5px black solid"}} onClick={smaller} >
-                нет оно МЕНЬШЕ
-            </button>
 
+    return (
+        <div>
+            ваше число {predict}?
+            <span> </span>
+            <Button onClick={() => selectButton(0)}>Да, это моё число </Button>
+            <Button onClick={() => selectButton(1)}> Нет,  моё число меньше</Button>
+            <Button onClick={() => selectButton(-1)}>Нет,  моё число больше </Button>
         </div>
-
-    </div>)
+    )
 }
 
 
