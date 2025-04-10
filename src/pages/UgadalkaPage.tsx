@@ -14,7 +14,7 @@ const UgadalkaPage = () => {
     const [answer, setAnswer] = React.useState([50])
     const [start, setStart] = React.useState([1])
     const [end, setEnd] = React.useState([100])
-    const [arr, setArr] = React.useState([0])
+    const [arr, setArr] = React.useState([generateArray])
     const [predict, setPredict] = React.useState(`${arr}`)
 
 
@@ -28,7 +28,6 @@ const UgadalkaPage = () => {
     function selectButton(key: number) {
         switch (key) {
             case 1:
-                generateArray(arr)
 
                 console.log(arr)
                 break;
