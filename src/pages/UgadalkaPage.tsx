@@ -2,22 +2,24 @@ import React from "react";
 import { Button } from "@mui/material";
 
 
-function generateArray()
-{
-    for (let i = 1; i > 101; i++) {
-        let arr = []
+function generateArray(arr: number[]) {
+    for (let i = 1; i < 101; i++) {
         arr.push(i)
-        console.log(arr)
     }
+    console.log(arr)
 }
+
 
 const UgadalkaPage = () => {
     const [answer, setAnswer] = React.useState([50])
     const [start, setStart] = React.useState([1])
     const [end, setEnd] = React.useState([100])
-    const [predict, setPredict] = React.useState("ваше число `${}`")
     const [arr, setArr] = React.useState([generateArray])
-    console.log(arr)
+    const [predict, setPredict] = React.useState(`${arr}`)
+
+
+
+
 
 
 
@@ -27,21 +29,22 @@ const UgadalkaPage = () => {
         switch (key) {
             case 1:
 
-                console.log("2")
+                console.log(arr)
                 break;
             case -1:
-                console.log("1")
+                console.log(arr)
                 break;
             default:
-                console.log("3")
+
+                console.log(arr)
                 break;
         }
     }
 
 
     return (
-        <div>
-            ваше число {answer}?
+        <div onChange={(e) => setPredict}>
+            ваше число {predict}?
             <span> </span>
             <Button onClick={() => selectButton(0)}>Да, это моё число </Button>
             <Button onClick={() => selectButton(1)}> Нет,  моё число меньше</Button>
