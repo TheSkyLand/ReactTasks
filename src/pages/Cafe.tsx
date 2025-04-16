@@ -4,6 +4,7 @@ const Cafe = () => {
     const [money, setMoney] = React.useState('')
     const [days, setDays] = React.useState([''])
     const [coupons, setCoupons] = React.useState([''])
+    let arr = []
     function changeMoney(event: any) {
         setMoney(event.target.value)
     }

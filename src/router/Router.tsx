@@ -7,6 +7,7 @@ import XYPage from '../pages/XYPage';
 import UgadalkaPage from '../pages/UgadalkaPage'
 import SwitchPage from '../pages/SwitchPage'
 import Cafe from '../pages/Cafe';
+import TestPage from '../pages/TestPage'
 
 
 const Router = () => {
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/ugadat" element={<UgadalkaPage />} />
         <Route path="/switch" element={<SwitchPage />}/>
         <Route path="/cafe" element={< Cafe/>} />
+        <Route path="/test" element={<TestPage />} />
     </Routes>
   );
 };
