@@ -5,20 +5,16 @@ const Cafe = () => {
     const [money, setMoney] = React.useState('')
     const [days, setDays] = React.useState([''])
     const [coupons, setCoupons] = React.useState([''])
-    let array = [15, 37, 60, 101, 12, 58, 102, 3, 100];
+    const [array, setArray] = React.useState([''])
     let count = 0;
     let y: any = []
     let p: any = []
 
-    /*
-    function changeMoney(event: any) {
-        setMoney(event.target.value)
+    function addEl(money: any) {
+        array.splice(1, 0, money)
+        console.log(array)
     }
-    function addEl() {
-        days.splice(1, 0, money)
-        console.log(days)
-    }
-*/
+
     function submit(arr: any) {
         for (let i = 0; array.length > i; i++) {
             if (Number(array[i]) >= 100) {
@@ -29,21 +25,32 @@ const Cafe = () => {
 
             }
         }
-        let maxEl = arr[y[0] + 1] 
+        let maxEl = arr[y[0] + 1]
         let maxIndx = y[0] + 1
-        while (array.length < 1) {
-            for (let j = y[0]; y[0]; j++) {
-                maxEl[j] = arr[j + 1] 
-
-
+        while (y.length > 1) {
+            let maxEl = arr[y[0] + 1];
+            let maxIndx = y[0] + 1;
+            for (let j = y[0] + 1; j < y[1]; j++) {
+                if (maxEl < arr[j]) {
+                    maxEl = arr[j];
+                    maxIndx = j;
+                }
             }
+            p.push(maxIndx);
+
+            y.splice(0, 1);
         }
-
         console.log(array)
-
+        console.log(y)
+        console.log(p)
     }
+
     return (
         <div>
+
+            <input type="number" style={{ border: "1px black solid" }} value={money} onChange={(e) => setMoney(e.target.value)} />
+            <button style={{ border: "1px black solid" }} onClick={() => addEl(array)}>добавить</button>
+
             <button onClick={() => submit(array)}>test</button>
         </div>
     )
