@@ -1,0 +1,17 @@
+.main-numpad {
+    display: block;
+    width: 250px;
+}
+
+.main-window {
+    display: block;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 10%;
+}
+
+.main-input {
+    border: 1px solid grey;
+}
+

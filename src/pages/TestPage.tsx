@@ -1,5 +1,4 @@
 
-
 const TestPage = () => {
     let a = [5, 2, 3]
     let sorted = a.sort()
@@ -23,7 +22,6 @@ const TestPage = () => {
 
     return (
         <div>
-            bu
             {sorted}
         </div>
     )
