@@ -2,32 +2,25 @@ import React from "react";
 import { Button } from "@mui/material";
 
 
-function generateArray(arr: number[]) {
-    for (let i = 1; i < 101; i++) {
-        arr.push(i)
-    }
-    console.log(arr)
-}
 
+const generateArray = (arr: any) => {
+    var array = [];
+    for (let i = 0; i < 101; i++)
+        arr.push(i);
+}
 
 const UgadalkaPage = () => {
     const [answer, setAnswer] = React.useState([50])
     const [start, setStart] = React.useState([1])
     const [end, setEnd] = React.useState([100])
-    const [arr, setArr] = React.useState([generateArray])
+    const [arr, setArr] = React.useState([  ])
     const [predict, setPredict] = React.useState(`${arr}`)
-
-
-
-
-
-
-
 
 
     function selectButton(key: number) {
         switch (key) {
-            case 1:
+            case 1: 
+
 
                 console.log(arr)
                 break;
@@ -35,7 +28,6 @@ const UgadalkaPage = () => {
                 console.log(arr)
                 break;
             default:
-
                 console.log(arr)
                 break;
         }
