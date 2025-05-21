@@ -1,4 +1,4 @@
-import { Button } from "@mui/material"
+import { Box, Button } from "@mui/material"
 
 interface numpadProps {
     num: number,
@@ -14,8 +14,8 @@ const Numpad = (props: numpadProps) => {
 
 
     return <Button onClick={() => test(props.num)} className="main-buttons">
-        {props.num}
-    </Button>
+            {props.num}
+        </Button>
 }
 
 
