@@ -1,9 +1,11 @@
-import { Box, Button, Input, TextField } from "@mui/material"
+import { Box, Button, Input, TextField, Typography } from "@mui/material"
 import React, { Component } from "react"
 import "./mainstyles/styles.css"
 import Numpad from "../components/Numpad"
 import Products from "../components/Products"
+import NumberField from "../components/NumberField"
 import { ProductsData } from "../helpers/ProductsData"
+import { clear } from "@testing-library/user-event/dist/clear"
 
 
 const SwitchPage = () => {
@@ -14,9 +16,7 @@ const SwitchPage = () => {
         p.push(i);
     }
 
-
     const [InputNum, setInput] = React.useState('');
-
 
     const backNum = (value: number) => {
         setInput(InputNum + value.toString());
@@ -26,14 +26,8 @@ const SwitchPage = () => {
         <div className="main">
             <h1 className="main-title">Автомат симулятор 0.2</h1>
             <div>
-                <span>окно с товарами</span>
+                <Typography>окно с товарами</Typography>
 
-
-
-
-                <TextField 
-                    value={InputNum}
-                />
                 <Box sx={{
                     display: "block",
                     width: "250px"
@@ -51,9 +45,13 @@ const SwitchPage = () => {
                     >Ok</Button>
                     <Button
 
+                        onClick={() => setInput('')}
+
+
                         sx={{
                             color: "red"
                         }}
+
                     >Clear</Button>
                 </Box>
                 <Box sx={{
@@ -61,13 +59,13 @@ const SwitchPage = () => {
                     height: "1000px",
                     border: "black solid 1px"
                 }}>
-                    {/* {ProductsData.map((item, key) => ( 
+                    {ProductsData.map((item, key) => ( 
                     <Products
                         image={`${process.env.PUBLIC_URL + item.img}`}
                         cost={item.cost}
                         code={item.code}
                         />
-                    ))} */}
+                    ))} 
                 </Box>
 
             </div>
