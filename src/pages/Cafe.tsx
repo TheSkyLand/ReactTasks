@@ -78,7 +78,8 @@ const Cafe = () => {
             <Input value={money} onInput={(e) => changeMoney(e)} />
 
             <Button style={{ border: "2px black solid" }} onClick={addEl}>add</Button>
-            //<Button style={{ border: "2px black solid" }} onClick={() => submit(array)}>submit</Button>
+            {//<Button style={{ border: "2px black solid" }} onClick={() => submit(array)}>submit</Button>
+            }
             <Button onClick={() => testTest(days)}>test </Button>
         </Box>
     )
