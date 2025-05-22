@@ -2,15 +2,12 @@ import { Box, Button, Input, TextField, Typography } from "@mui/material"
 
 
 interface NumberFieldProps {
-    InputNum: string
+    inputStr: string
 }
 
 const NumberField = (props: NumberFieldProps) => {
-
-
-
     return <TextField
-        value={InputNum}
+        value={props.inputStr}
     />
 
 }

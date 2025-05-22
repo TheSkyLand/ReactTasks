@@ -1,7 +1,7 @@
 import React from "react"
 import { Input } from "@mui/material"
 import Numpad from "./Numpad"
-
+import NumberField from "./NumberField"
 
 import { Box, Button, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material"
 import { title } from "process";
@@ -24,6 +24,9 @@ const arrayData = [
 const Products = (props: ProductsProps) => {
 
     console.log(props.image)
+
+    
+
 
     return <Box
         sx={{

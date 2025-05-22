@@ -22,11 +22,26 @@ const SwitchPage = () => {
         setInput(InputNum + value.toString());
     }
 
+    
+    function confirm() {
+        const ExitData = ProductsData.filter(code => backNum)
+        
+        return alert(ExitData)
+    }
+    
+   console.log(ProductsData)
+
     return (
         <div className="main">
-            <h1 className="main-title">Автомат симулятор 0.2</h1>
+            <h1 className="main-title">Автомат симулятор</h1>
             <div>
                 <Typography>окно с товарами</Typography>
+
+                <NumberField
+                inputStr={InputNum}
+
+
+                />
 
                 <Box sx={{
                     display: "block",
@@ -39,6 +54,8 @@ const SwitchPage = () => {
                         />
                     ))}
                     <Button
+                    onClick={() => confirm()}
+
                         sx={{
                             color: "green"
                         }}
@@ -46,6 +63,7 @@ const SwitchPage = () => {
                     <Button
 
                         onClick={() => setInput('')}
+
 
 
                         sx={{
