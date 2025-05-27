@@ -11,7 +11,7 @@ const Cafe = () => {
     let count = 0
 
     function changeMoney(event: any) {
-        setMoney(event.target.value)
+        setMoney(event.target.value.toString())
     }
 
 

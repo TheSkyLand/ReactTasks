@@ -32,11 +32,10 @@ const SwitchPage = () => {
             handleOpen()
 
             if (item.code.toString() === InputNum) {
-                return 
+                return item
             }
         })
     }
-
 
     return (
         <div className="main">
@@ -60,19 +59,12 @@ const SwitchPage = () => {
                     }}
                     >
                         <Typography>
-                            {}
                         </Typography>
                     </Box>
-
                 </Modal>
-
-
                 <NumberField
                     inputStr={InputNum}
-
-
                 />
-
                 <Box sx={{
                     display: "block",
                     width: "250px"
