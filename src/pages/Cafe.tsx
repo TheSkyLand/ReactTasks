@@ -5,6 +5,8 @@ import { Simulate } from "react-dom/test-utils";
 const Cafe = () => {
     const [money, setMoney] = React.useState('')
     const [days, setDays] = React.useState([''])
+    const [dense, setDense] = React.useState(false);
+    const [secondary, setSecondary] = React.useState(false);
     const [coupons, setCoupons] = React.useState([''])
     let array = [15, 37, 60, 101, 12, 58, 102, 3, 100];
     let y: any = []
@@ -49,7 +51,6 @@ const Cafe = () => {
             y.splice(0, 1);
 
             for (let i = p; i < arr.length; i++) {
-                debugger
                 summ += arr[i]
             }
         }
@@ -69,6 +70,21 @@ const Cafe = () => {
             <ListItem value={days} onChange={changeDays}>
                 <ListItemText>{days}</ListItemText>
             </ListItem>
+            <Typography>{`Дни в которые использованы купоны: ${p}`}</Typography>
+            <Typography>{`дни когда купон получен: ${y}`}</Typography>
+            <Typography>{`Количество купонов: ${count}`}</Typography>
+            <Typography>{`Сумма ${summ}`}</Typography>
+            <List dense={dense}>
+                {days.map((item, key) => (
+                    <ListItem>
+                        <ListItemText
+                            primary={`${days}`}
+                        />
+                    </ListItem>
+                )
+                )}
+            </List>
+
 
 
             <Button style={{ border: "2px black solid" }} onClick={(e) => addEl(e)}>add</Button>

@@ -7,7 +7,7 @@ import XYPage from '../pages/XYPage';
 import SwitchPage from '../pages/SwitchPage'
 import Cafe from '../pages/Cafe';
 import TestPage from '../pages/TestPage'
-
+import MeanPage from '../pages/MeanPage';
 
 const Router = () => {
   return (
@@ -20,6 +20,7 @@ const Router = () => {
         <Route path="/switch" element={<SwitchPage />}/>
         <Route path="/cafe" element={< Cafe/>} />
         <Route path="/test" element={<TestPage />} />
+        <Route path="/mean" element={<MeanPage/>} />
     </Routes>
   );
 };
