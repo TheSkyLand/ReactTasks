@@ -11,7 +11,7 @@ const SwitchPage = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    let output = [];
+    const [output, setOutput] = React.useState({ name: '', img: '', code: 0, cost: 0 }) 
     let p = [];
 
     for (let i = 0; i < 10; i++) {
@@ -24,14 +24,12 @@ const SwitchPage = () => {
         setInput(InputNum + value.toString());
     }
 
-    function Data() {
+    const data = () => {
         ProductsData.find(function (item) {
 
             if (item.code.toString() === InputNum) {
                 handleOpen()
-                return (
-                    console.log(item)
-                )
+                setOutput({ name: `${item.name}`, img: ' ', code: item.code, cost: item.cost })
             }
         })
     }
@@ -55,7 +53,7 @@ const SwitchPage = () => {
                 p: 4,
             }}
             >
-                <Typography></Typography>
+                <Typography>выдан товар {`${output.name} ${output.code}  ${output.cost} ${output.img}`}</Typography>
             </Box>
         </Modal>
         <NumberField
@@ -72,7 +70,7 @@ const SwitchPage = () => {
                 />
             ))}
             <Button
-                onClick={() => Data()}
+                onClick={() => data()}
                 sx={{
                     color: "green"
                 }}

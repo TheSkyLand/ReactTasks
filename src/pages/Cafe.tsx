@@ -1,20 +1,23 @@
 import { Box, Button, Input, List, ListItem, ListItemText, TextField, Typography } from "@mui/material";
 import React from "react";
+import { Simulate } from "react-dom/test-utils";
 
 const Cafe = () => {
     const [money, setMoney] = React.useState('')
     const [days, setDays] = React.useState([''])
     const [coupons, setCoupons] = React.useState([''])
-    // array = [15, 37, 60, 101, 12, 58, 102, 3, 100];
+    let array = [15, 37, 60, 101, 12, 58, 102, 3, 100];
     let y: any = []
     let p: any = []
     let count = 0
+    let summ = 0
+
 
     function changeMoney(event: any) {
         setMoney(event.target.value.toString())
     }
 
-    function changeDays(event :any) {
+    function changeDays(event: any) {
         setDays(event.target.value)
     }
 
@@ -43,13 +46,18 @@ const Cafe = () => {
                 }
             }
             p.push(maxInd);
-
             y.splice(0, 1);
+
+            for (let i = p; i < arr.length; i++) {
+                debugger
+                summ += arr[i]
+            }
         }
-        console.log(`дни: ${days}`)
+        console.log(`дни: ${arr}`)
         console.log(`Дни в которые использованы купоны: ${p}`)
         console.log(`дни когда купон получен: ${y}`)
         console.log(`Количество купонов: ${count}`)
+        console.log(`Сумма ${summ}`)
 
     }
     return (
@@ -58,9 +66,9 @@ const Cafe = () => {
             <span>vvedite chislo</span>
             <Input value={money} onInput={(e) => changeMoney(e)} />
 
-                <ListItem value={days} onChange={changeDays}>
-                    <ListItemText>{days}</ListItemText>
-                </ListItem>
+            <ListItem value={days} onChange={changeDays}>
+                <ListItemText>{days}</ListItemText>
+            </ListItem>
 
 
             <Button style={{ border: "2px black solid" }} onClick={(e) => addEl(e)}>add</Button>
