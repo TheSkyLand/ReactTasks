@@ -5,6 +5,8 @@ import { Simulate } from "react-dom/test-utils";
 const Cafe = () => {
     const [money, setMoney] = React.useState(0)
     const [days, setDays]: any = React.useState([])
+    const [dense, setDense] = React.useState(false);
+    const [secondary, setSecondary] = React.useState(false);
     const [coupons, setCoupons] = React.useState([])
     let array = [15, 37, 60, 101, 12, 58, 102, 3, 100];
     let y: any = []

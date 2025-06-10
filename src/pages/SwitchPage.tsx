@@ -5,13 +5,15 @@ import Numpad from "../components/Numpad"
 import Products from "../components/Products"
 import NumberField from "../components/NumberField"
 import { ProductsData } from "../helpers/ProductsData"
-import { clear } from "@testing-library/user-event/dist/clear"
+import ModalEl from "../components/ModalEl"
+
 
 const SwitchPage = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const [output, setOutput] = React.useState({ name: '', img: '', code: 0, cost: 0 }) 
+
+    const [output, setOutput] = React.useState({ name: '', img: '', code: 0, cost: 0 })
     let p = [];
 
     for (let i = 0; i < 10; i++) {
@@ -28,7 +30,7 @@ const SwitchPage = () => {
         ProductsData.find(function (item) {
 
             if (item.code.toString() === InputNum) {
-                handleOpen()
+                setOpen(true)
                 setOutput({ name: `${item.name}`, img: ' ', code: item.code, cost: item.cost })
             }
         })
@@ -37,25 +39,11 @@ const SwitchPage = () => {
     return (<div>
         <Typography className="main-title">Автомат симулятор</Typography>
         <Typography>окно с товарами</Typography>
-        <Modal
+        <ModalEl
             open={open}
-            onClose={handleClose}
-        >
-            <Box sx={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 400,
-                bgcolor: 'background.paper',
-                border: '2px solid #000',
-                boxShadow: 24,
-                p: 4,
-            }}
-            >
-                <Typography>выдан товар {`${output.name} ${output.code}  ${output.cost} ${output.img}`}</Typography>
-            </Box>
-        </Modal>
+            handleClose={() => setOpen(!open)}
+            output={output}
+        />
         <NumberField
             inputStr={InputNum}
         />
