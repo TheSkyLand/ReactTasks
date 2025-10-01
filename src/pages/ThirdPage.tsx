@@ -15,7 +15,7 @@ export default function ThirdPage() {
     }
     function countA() {
         const count = testArray.filter(e => e === a).length
-        setCountNum(count);
+        setCountNum(count); //сортировка
         console.log(countNum)
     }
     return (

@@ -33,7 +33,7 @@ const TestPage = () => {
             <Button onClick={addEl}>    
                 add
             </Button>
-            <Button onClick={() => sortfunc()}>
+            <Button onClick={() => sortfunc()}> // сортировка
                 sort
             </Button>
         </Box>
