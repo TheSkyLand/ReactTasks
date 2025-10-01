@@ -6,7 +6,7 @@ import GotMean from "../components/GotMean"
 const MeanPage = () => {
     const [array, setArray] = React.useState([])
     const [inputEl, setInputEl] = React.useState(0)
-    let mean = 0
+    const [mean, setMean] = React.useState(0)
     function addItem(arr: any, inputEl: number) {
         arr.push(inputEl)
         console.log(arr)
@@ -16,12 +16,14 @@ const MeanPage = () => {
 
     function gotMean(arr: any) {
         let count = 0
+        let local = mean;
         for (let i = 0; i < arr.length; i++) {
             count++
-            mean += arr[i]
+            local += arr[i]
         }
-        mean /= count
+        local /= count
         console.log(mean)
+        setMean(local);
     }
 
 
