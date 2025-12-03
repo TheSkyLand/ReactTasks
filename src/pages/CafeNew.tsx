@@ -1,7 +1,7 @@
 import React from "react";
 
 const CafeNew = () => {
-    const [arr, setArr] = React.useState([5, 35, 40, 101, 59, 63])
+    const [arr, setArr] = React.useState([35, 40, 101, 59, 63])
 
     let p: any = [] //массив в котором находятся дни с тратой меньше 101
 
@@ -11,30 +11,37 @@ const CafeNew = () => {
 
     let count = 0; //количество купонов
 
+    let coupons = 0;
+
     let max = arr[0]; //создаём переменную для хранения максимального числа
-    let min = arr[0]
 
     const test = () => {
         debugger
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] >= 100) {
                 count++
+                coupons++
                 b.push(i)
             }
-            if (max < arr[i] || max !== 100) {
+            if (max < arr[i] || max >= 100) {
                 max = arr[i]
-                if (min > arr[i]) {
-                    min = arr[i]
-                }
             }
         }
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] !== max && count > 0 && arr[i] !== min) {
+            if (arr[i] !== max) {
                 p.push(arr[i])
             }
         }
+        for (let j = 0; j < b.length; j++) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === max && coupons > 0) {
+                    coupons--
+                }
+
+            }
+        }
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] === p[i - 1]) {
+            if (arr[i] === p[i]) {
                 sum += arr[i]
             }
         }
@@ -43,7 +50,9 @@ const CafeNew = () => {
 
         console.log("день в который был использован купон: ", max)
 
-        console.log("количество купонов: ", count)
+        console.log("количество купонов получено: ", count)
+
+        console.log("количество купонов осталось: ", coupons)
 
         console.log("неделя: ", arr)
 
