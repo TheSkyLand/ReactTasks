@@ -3,7 +3,7 @@ import React from "react";
 const CafeNew = () => {
     const [arr, setArr] = React.useState([5, 35, 40, 101, 59, 63])
 
-    let p: any = [] //массив в котором находятся купоны больше 101
+    let p: any = [] //массив в котором находятся дни с тратой меньше 101
 
     let b: any = []
 
@@ -19,6 +19,7 @@ const CafeNew = () => {
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] >= 100) {
                 count++
+                b.push(i)
             }
             if (max < arr[i] || max !== 100) {
                 max = arr[i]
