@@ -32,12 +32,19 @@ const CafeNew = () => {
                 p.push(arr[i])
             }
         }
-        for (let j = 0; j < b.length; j++) {
+        while (b.length < 1) {
+            let maxEl = arr[b[0] + 1];
+            let maxInd = b[0] + 1;
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i] === max && coupons > 0) {
                     coupons--
                 }
-
+            }
+            for (let j = b[0] + 1; j < b[1]; j++) {
+                if (maxEl < arr[j]) {
+                    maxEl = arr[j];
+                    maxInd = j;
+                }
             }
         }
         for (let i = 0; i < arr.length; i++) {
