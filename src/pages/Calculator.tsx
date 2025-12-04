@@ -22,9 +22,7 @@ const Calculator = () => {
                 <CalculatorNumpad
                 num={index}
                 back={backNum}
-                >
-
-                </CalculatorNumpad>
+                />
             ))}
         </Box>
 

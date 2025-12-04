@@ -6,7 +6,7 @@ interface numpadProps {
 }
 
 
-const Numpad = (props: numpadProps) => {
+const SwitchNumpad = (props: numpadProps) => {
     const test = (t: number) => {
 
         props.back(t);
@@ -19,4 +19,4 @@ const Numpad = (props: numpadProps) => {
 }
 
 
-export default Numpad
+export default SwitchNumpad

@@ -1,11 +1,11 @@
 import { Box, Button, Input, Modal, TextField, Typography } from "@mui/material"
 import React, { Component } from "react"
 import "./mainstyles/styles.css"
-import Numpad from "../components/Numpad"
 import Products from "../components/Products"
 import NumberField from "../components/NumberField"
 import { ProductsData } from "../helpers/ProductsData"
 import ModalEl from "../components/ModalEl"
+import Numpad from "../components/SwitchNumpad"
 
 
 const SwitchPage = () => {
