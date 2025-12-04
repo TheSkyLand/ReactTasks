@@ -8,11 +8,13 @@ import SwitchPage from '../pages/SwitchPage'
 import Cafe from '../pages/Cafe';
 import TestPage from '../pages/TestPage'
 import MeanPage from '../pages/MeanPage';
+import CafeNew from '../pages/CafeNew';
 
 const Router = () => {
   return (
     <Routes>
         <Route path="/" index element={<MainPage />} />
+        <Route path="/cafenew" index element={<CafeNew />} />
         <Route path="/second" index element={<SecondPage />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/third" element={<ThirdPage />} />
