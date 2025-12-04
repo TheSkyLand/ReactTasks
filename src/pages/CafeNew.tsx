@@ -1,7 +1,11 @@
 import React from "react";
 
 const CafeNew = () => {
-    const [arr, setArr] = React.useState([35, 40, 101, 59, 63])
+    let arr = [35, 40, 101, 59, 63, 101, 59, 63];
+
+    const [inputArr, setInputArr] = React.useState()
+
+
 
     let p: any = [] //массив в котором находятся дни с тратой меньше 101
 
@@ -15,42 +19,53 @@ const CafeNew = () => {
 
     let max = arr[0]; //создаём переменную для хранения максимального числа
 
-    const test = () => {
-        debugger
+    const addEl = (inp: number) =>
+    {
+
+    }
+
+    const test = (arr: any) => {
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] >= 100) {
                 count++
                 coupons++
                 b.push(i)
             }
-            if (max < arr[i] || max >= 100) {
+            if (max < arr[i] && arr[i] < 100) {
                 max = arr[i]
             }
         }
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] !== max) {
-                p.push(arr[i])
+
+        debugger
+        while (b.length > 1) {
+            max = arr[b[0] + 1];
+            let maxindex = b[0] + 1
+            for (let i = b[0] + 1; i < b[1]; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                    maxindex = i;
+                }
             }
+            b.pop()
         }
-        while (b.length < 1) {
-            let maxEl = arr[b[0] + 1];
-            let maxInd = b[0] + 1;
+        if (b.length <= 1) {
             for (let i = 0; i < arr.length; i++) {
+                if (max < arr[i] && arr[i] < 100) {
+                    max = arr[i]
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== max) {
+                    p.push(arr[i])
+                }
                 if (arr[i] === max && coupons > 0) {
                     coupons--
                 }
             }
-            for (let j = b[0] + 1; j < b[1]; j++) {
-                if (maxEl < arr[j]) {
-                    maxEl = arr[j];
-                    maxInd = j;
-                }
-            }
         }
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] === p[i]) {
-                sum += arr[i]
-            }
+
+        for (let i = 0; i < p.length; i++) {
+            sum += p[i]
         }
 
         console.log("дни с использованием купона: ", p)
@@ -67,12 +82,78 @@ const CafeNew = () => {
     }
 
     return (
-        <div>
-            <button
-                onClick={() => test()}
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingTop: 300,
+                width: "100%"
+            }}
+        >
+            <div
+                style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    width: 300,
+                    height: "100%",
+                    border: "1px solid black",
+                }}
             >
-                click me
-            </button>
+                <ul>{arr.map((index) => (
+                    <li>
+                        <input
+                        value={index}
+                        ></input>
+                    </li>
+                ))}
+                </ul>
+
+                <div
+                    style={{
+                        width: "100%",
+                        height: "300",
+                        flexWrap: "wrap",
+                        alignContent: "center",
+                        justifyContent: "center",
+                        margin: 5
+                    }}
+                >
+                    <input
+                        style={{
+                            border: "1px solid black",
+                            margin: 5
+                        }}
+                    />
+                    <button
+                        style={{
+                            border: "1px solid black",
+                            margin: 5
+                        }}
+                    >Add Number</button>
+                    <button
+                        style={{
+                            border: "1px solid black",
+                            margin: 5
+                        }}
+                    >Remove Number</button>
+                </div>
+            </div>
+            <div
+                style={{
+                    display: "flex",
+                    width: 300,
+                    height: 300,
+                    border: "1px solid black",
+                    justifyContent: "center",
+                }}
+            >
+                <button
+                    onClick={() => test(arr)}
+                >
+                    Submit
+                </button>
+
+            </div>
         </div>
     )
 }
