@@ -24,9 +24,9 @@ const CafeNew = () => {
         Number(newList.push(event))
         setInputArr(newList)
     }
-    const changeEl = (inp: any) => {
+    const changeEl = (inp: any, event: any) => {
         const newList = [...inputArr]
-        Number(newList.splice(inp, 0))
+        Number(newList[inp] = Number(event?.target.value))
         setInputArr(newList)
     }
     const changeInput = (event: any) => {
@@ -49,7 +49,6 @@ const CafeNew = () => {
         let localCount = 0;
 
         let localCoupons = 0;
-
 
         for (let i = 0; i < arr.length; i++) {
             sum += arr[i]
@@ -114,7 +113,7 @@ const CafeNew = () => {
                     >
                         <input
                             type="number"
-                            onInput={(e) => changeEl(e)}
+                            onChange={(e) => changeEl(key, e)}
                             value={index}
                         />
                         <button
