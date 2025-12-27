@@ -1,7 +1,10 @@
 import { Box, Modal, Typography } from "@mui/material";
 
+
+//компонент для автомата
+//если кратко то прокидываем пропс, среди которых есть булево значение открыто ли окно, при нажатии срабатывают соответствующие функции
 interface ModalElProps {
-    open: boolean,
+    open: boolean, 
     handleClose: () => void;
     output: {
         name: string,
