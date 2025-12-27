@@ -10,20 +10,20 @@ import Numpad from "../components/SwitchNumpad"
 
 const SwitchPage = () => {
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
+    const handleOpen = () => setOpen(true); // открыть/закрыть модальное окно
     const handleClose = () => setOpen(false);
 
-    const [output, setOutput] = React.useState({ name: '', img: '', code: 0, cost: 0 })
+    const [output, setOutput] = React.useState({ name: '', img: '', code: 0, cost: 0 }) // переменная для вывода
     let p = [];
 
     for (let i = 0; i < 10; i++) {
-        p.push(i);
+        p.push(i); //заполняем массив для кнопок 1-9
     }
 
-    const [InputNum, setInput] = React.useState('');
+    const [InputNum, setInput] = React.useState(''); // переменная для ввода
 
     const backNum = (value: number) => {
-        setInput(InputNum + value.toString());
+        setInput(InputNum + value.toString()); // функция которая записывает в InputNum цифры из компонента Numpad
     }
 
     const data = () => {
