@@ -1,5 +1,5 @@
 
-
+//Не работает - Work In Progress
 const QrPage = () => {
     let arr = [];
 
