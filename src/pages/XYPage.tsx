@@ -3,12 +3,12 @@ import React from "react"
 const XYPage = () => {
 
 
-    const [x1, setX1] = React.useState(0)
+    const [x1, setX1] = React.useState(0) // выделяем переменную под ввод
     const [y1, setY1] = React.useState(0)
     const [x2, setX2] = React.useState(0)
     const [y2, setY2] = React.useState(0)
 
-    function changeX1(event: any) {
+    function changeX1(event: any) { //функция для обновления значений
         setX1(event.target.value)
     }
     function ChangeY1(event: any) {
@@ -22,7 +22,7 @@ const XYPage = () => {
     }
 
 
-    function checkZone() {
+    function checkZone() { // функция которая определяет координаты точек
         if (x1 < 0 && y1 > 0 && x2 < 0 && y2 > 0) {
             console.log("zone 1")
         }
