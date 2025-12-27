@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material"
 import CalculatorNumpad from "../components/CalculatorNumpad"
 import React from "react"
 
-// Work in progress
+// Work in progress/Заброшено(не перевод)
 const Calculator = () => {
     const [InputNum, setInput] = React.useState('')
 
