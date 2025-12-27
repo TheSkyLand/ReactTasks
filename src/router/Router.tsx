@@ -9,6 +9,7 @@ import Cafe from '../pages/Cafe';
 import TestPage from '../pages/TestPage'
 import MeanPage from '../pages/MeanPage';
 import CafeNew from '../pages/CafeNew';
+import QrPage from '../pages/QrPage';
 
 const Router = () => {
   return (
@@ -23,8 +24,10 @@ const Router = () => {
         <Route path="/cafe" element={< Cafe/>} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/mean" element={<MeanPage/>} />
+        <Route path="/qr" element={<QrPage />} />
     </Routes>
   );
 };
 
 export default Router;
+
