@@ -9,7 +9,7 @@ const TestPage = () => {
         for (let i = 0; i < arrOut.length; i++) {
             for (let j = 0; j < arrOut.length - i; j++) {
                 if (arrOut[j] > arrOut[j + 1]) {
-                    [arrOut[j], arrOut[j + 1]] = [arrOut[j + 1], arrOut[j]]
+                    [arrOut[j], arrOut[j + 1]] = [arrOut[j + 1], arrOut[j]] //простая сортировка, проверяет если предыдущий элемент больше следующего(помоему так)
                 }
             }
         }
