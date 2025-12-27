@@ -3,15 +3,15 @@ import React from "react";
 const CafeNew = () => {
     const [inputArr, setInputArr] = React.useState([1, 2, 101, 5, 6, 101, 101, 3, 101])
 
-    const [input, setInput] = React.useState(0)
+    const [input, setInput] = React.useState(0) // введённое нами число
 
-    const [arrEl, setArrel] = React.useState(0)
+    const [arrEl, setArrel] = React.useState(0) // установка значений для массива
 
-    const [sum, setSum] = React.useState(0);
+    const [sum, setSum] = React.useState(0); // сумма
 
     const [count, setCount] = React.useState(0); //количество купонов
 
-    const [coupons, setCoupons] = React.useState(0);
+    const [coupons, setCoupons] = React.useState(0); // массив купонов
 
     let p: any = [] //массив в котором находятся дни с тратой меньше 101
 
@@ -19,23 +19,23 @@ const CafeNew = () => {
 
     let max = inputArr[0]; //создаём переменную для хранения максимального числа
 
-    const addEl = (event: any) => {
-        const newList = [...inputArr]
+    const addEl = (event: any) => { // функция для обновления массива после добавления элемента
+        const newList = [...inputArr] // новый массив
         Number(newList.push(event))
         setInputArr(newList)
     }
-    const changeEl = (inp: any, event: any) => {
-        const newList = [...inputArr]
+    const changeEl = (inp: any, event: any) => {  // функция для обновления массива после изменения элемента
+        const newList = [...inputArr] // новый массив
         Number(newList[inp] = Number(event?.target.value))
         setInputArr(newList)
     }
-    const changeInput = (event: any) => {
-        const newList = [...inputArr]
+    const changeInput = (event: any) => {  // функция для обновления массива после изменения ввода
+        const newList = [...inputArr] // новый массив
         setInput(Number(event.target.value))
         setInputArr(newList)
     }
-    const removeEl = (inp: number) => {
-        const newList = [...inputArr]
+    const removeEl = (inp: number) => {// функция для обновления массива после удаления элемента
+        const newList = [...inputArr] // новый массив
         Number(newList.splice(inp, 1))
         setInputArr(newList)
         test(newList)
@@ -50,7 +50,7 @@ const CafeNew = () => {
 
         let localCoupons = 0;
 
-        for (let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) { // функция в которой считаем сумму элементов, купонов, и их количество, в другой массив мы добавляем числа которые больше или равно 100
             sum += arr[i]
             if (arr[i] >= 100) {
                 localCoupons++
