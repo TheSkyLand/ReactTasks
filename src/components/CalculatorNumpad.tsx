@@ -2,11 +2,11 @@ import { Button } from "@mui/material"
 
 interface calculatorNumpadProps{
     num: number,
-    back: (value: number) => void
+    back: (value: number) => void // emit(props-функция)
 }
 
-const CalculatorNumpad = (props: calculatorNumpadProps) => {
-    const provide = (t: number) => {
+const CalculatorNumpad = (props: calculatorNumpadProps) => { //подключаем пропс
+    const provide = (t: number) => { //функция для того, чтобы отрабатывал emit, в нашем случае он инициализируется в кнопке
         props.back(t)
     }
 
