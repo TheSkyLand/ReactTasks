@@ -6,8 +6,8 @@ const MainPage = () => {
   // function test()
 
   const test = () => {
-    let p = counter + 1;
-    setCounter(p);
+    let p = counter + 1; //кликер
+    setCounter(p); 
   }
 
   return (
@@ -43,5 +43,6 @@ const MainPage = () => {
     </div>
   )
 }
+
 
 export default MainPage
