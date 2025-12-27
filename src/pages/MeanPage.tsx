@@ -15,13 +15,13 @@ const MeanPage = () => {
 
 
     function gotMean(arr: any) {
-        let count = 0
-        let local = mean;
+        let count = 0 // количество чисел
+        let local = mean; // не помню для чего
         for (let i = 0; i < arr.length; i++) {
-            count++
-            local += arr[i]
+            count++ // за каждое число находящееся в в массиве прибавляет 1 к количеству чисел
+            local += arr[i] // после всего записывает в сумму число
         }
-        local /= count
+        local /= count // делит сумму на количество
         console.log(mean)
         setMean(local);
     }
@@ -29,7 +29,7 @@ const MeanPage = () => {
 
 
     function changeInputEl(event: any) {
-        setInputEl(parseInt(event.target.value))
+        setInputEl(parseInt(event.target.value)) // для обновления usestate переменных
     }
 
     return <Box>
