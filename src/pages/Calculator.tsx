@@ -8,7 +8,7 @@ const Calculator = () => {
 
     let p = []
     for (let i = 0; i < 10; i++) {
-        p.push(i)
+        p.push(i) // массив для чисел numpad
     }
 
     const backNum = (value: Number) => {
